@@ -4,13 +4,16 @@ import { StyleSheet, Text, View, TextInput, StatusBar } from 'react-native';
 export default function App() {
   //MODEL VIEW CONTROLLER
 
-  //CONTROLLER
-  //Valores de input atraves do <TextInput> e onChangeText
+  //CONTROLLER, controls de dataflow
+  //Input values using <TextInput> and onChangeText
   const [value1, setValue1] = React.useState('');
   const [value2, setValue2] = React.useState('');
+  //to do something like budget_calculation = budget_calc, object = function
+  //and use the controller as a bridge for the view and model
+  //tirar esse acesso da linha 60 que foi direto do view para o model.
   
   //MODEL
-  //Funcao para o calculo do programa
+  //Function logic calculation.
   //valorDeles -> grupo1, valorNosso -> grupo2
   function budget_calc(valorGrupo1, valorGrupo2){
     let valorGrupo1_pt1 = valorGrupo1 / 2;
@@ -25,7 +28,7 @@ export default function App() {
     }
   }
 
-  //VIEW
+  //VIEW, only connected to the controller
   return (
     <View style={styles.container}>
 
